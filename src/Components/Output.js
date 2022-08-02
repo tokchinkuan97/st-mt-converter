@@ -24,6 +24,7 @@ const Output = (props) => {
   } else {
     block = +props.address.block * 2 + 1;
   }
+  block = block.toString(16);
 
   let wordline = -1;
   let string = -1;
@@ -68,7 +69,7 @@ const Output = (props) => {
           value={die === (undefined || NaN) ? "-" : die}
         />
         <OutputCard
-          title="Block"
+          title="Block (hex)"
           value={block === (undefined || NaN) ? "-" : block}
         />
         <OutputCard
