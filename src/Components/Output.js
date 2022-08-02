@@ -39,22 +39,49 @@ const Output = (props) => {
     string = slcEquiPage % 4;
   }
 
+  let page = "";
+  if (props.config.cellLevel === "TLC") {
+    const pageLevelNumber = props.address.page % 4;
+    switch (pageLevelNumber) {
+      case 0:
+        page = "Lower";
+        break;
+      case 1:
+        page = "Middle";
+        break;
+      case 2:
+        page = "Upper";
+        break;
+      default:
+        break;
+    }
+  }
+
   return (
     <Card className={styles["output"]}>
       <header>
         <h2>The corresponding address in MT would be</h2>
       </header>
       <div className={styles["output-results"]}>
-        <OutputCard title="Die" value={die === undefined ? "-" : die} />
-        <OutputCard title="Block" value={block === undefined ? "-" : block} />
+        <OutputCard
+          title="Die"
+          value={die === (undefined || NaN) ? "-" : die}
+        />
+        <OutputCard
+          title="Block"
+          value={block === (undefined || NaN) ? "-" : block}
+        />
         <OutputCard
           title="Wordline"
-          value={wordline === undefined ? "-" : wordline}
+          value={wordline === (undefined || NaN) ? "-" : wordline}
         />
         <OutputCard
           title="String"
-          value={string === undefined ? "-" : string}
+          value={string === (undefined || NaN) ? "-" : string}
         />
+        {props.config.cellLevel === "TLC" && (
+          <OutputCard title="Page" value={page} />
+        )}
       </div>
     </Card>
   );
