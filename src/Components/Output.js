@@ -44,13 +44,13 @@ const Output = (props) => {
     const pageLevelNumber = props.address.page % 4;
     switch (pageLevelNumber) {
       case 0:
-        page = "Lower";
+        page = "L";
         break;
       case 1:
-        page = "Middle";
+        page = "M'";
         break;
       case 2:
-        page = "Upper";
+        page = "U";
         break;
       default:
         break;
