@@ -1,0 +1,30 @@
+.output-card {
+  /* margin: 2rem 0; */
+  padding: 2rem;
+  border-radius: 30px;
+  width: 7rem;
+}
+
+.output-card p {
+  font-size: 3rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.output {
+  margin: 5rem 0;
+  padding: 2.5rem;
+  border-radius: 40px;
+  width: 100%;
+}
+
+.output header {
+  text-align: center;
+}
+
+.output-results {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  justify-content: center;
+  gap: 2rem 3rem;
+}
