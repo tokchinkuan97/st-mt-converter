@@ -42,13 +42,13 @@ const Output = (props) => {
 
   let page = "";
   if (props.config.cellLevel === "TLC") {
-    const pageLevelNumber = props.address.page % 4;
+    const pageLevelNumber = props.address.page % 3;
     switch (pageLevelNumber) {
       case 0:
         page = "L";
         break;
       case 1:
-        page = "M'";
+        page = "M";
         break;
       case 2:
         page = "U";
